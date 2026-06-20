@@ -4,6 +4,9 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   base: "/gohan-biyori/",
+  build: {
+    outDir: "docs",
+  },
   plugins: [
     react(),
     VitePWA({

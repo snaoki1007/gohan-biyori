@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/gohan-biyori/sw.js', { scope: '/gohan-biyori/' })})}
