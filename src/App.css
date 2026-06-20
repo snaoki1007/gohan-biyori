@@ -1,0 +1,512 @@
+body {
+  margin: 0;
+  background: #fffaf7;
+  color: #3b302c;
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  width: min(100% - 24px, 960px);
+  margin: 0 auto;
+  padding: 14px 0 40px;
+}
+
+.hero {
+  margin-bottom: 22px;
+  padding: 28px 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #fff0f5, #fff8e8);
+  box-shadow: 0 14px 34px rgba(180, 105, 120, 0.14);
+}
+
+.label {
+  margin: 0 0 8px;
+  color: #d77b91;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: #826f67;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 18px;
+}
+
+.category-tab {
+  flex: 0 0 auto;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #8b746d;
+  box-shadow: 0 8px 20px rgba(150, 95, 80, 0.1);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.category-tab.active {
+  background: #d77b91;
+  color: #ffffff;
+}
+
+.section-heading {
+  margin: 8px 0 16px;
+}
+
+.section-heading p {
+  margin: 0 0 4px;
+  color: #d77b91;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.set-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.set-card {
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  text-align: left;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.12);
+  cursor: pointer;
+}
+
+.set-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.set-card-body {
+  padding: 12px;
+}
+
+.card-category {
+  margin: 0 0 7px;
+  color: #d77b91;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.set-card h3 {
+  margin: 0;
+  color: #3b302c;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card-description {
+  display: none;
+}
+
+.back-button {
+  border: none;
+  margin-bottom: 14px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #9b615f;
+  box-shadow: 0 8px 20px rgba(140, 92, 78, 0.12);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.detail-top {
+  overflow: hidden;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(140, 92, 78, 0.14);
+}
+
+.detail-top img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.detail-summary {
+  padding: 22px 18px 24px;
+}
+
+.detail-summary h1 {
+  font-size: 30px;
+}
+
+.nutrition-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.nutrition-row div {
+  min-width: 0;
+  padding: 13px 8px;
+  border-radius: 18px;
+  background: #fff7f2;
+  border: 1px solid #ffe3dc;
+  text-align: center;
+}
+
+.nutrition-row strong {
+  display: block;
+  color: #d77b91;
+  font-size: 16px;
+}
+
+.nutrition-row span {
+  display: block;
+  margin-top: 4px;
+  color: #8d7972;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.content-section {
+  margin-top: 28px;
+}
+
+.dish-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.dish-card,
+.ingredient-card,
+.recipe-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.09);
+}
+
+.dish-card {
+  padding: 16px;
+}
+
+.dish-card span {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #fff0f5;
+  color: #d77b91;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.dish-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.dish-card p {
+  margin: 0;
+  color: #8d7972;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ingredient-card {
+  overflow: hidden;
+}
+
+.ingredient-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f4e5df;
+}
+
+.ingredient-row:last-child {
+  border-bottom: none;
+}
+
+.ingredient-row span {
+  font-weight: 800;
+}
+
+.ingredient-row strong {
+  color: #d77b91;
+  white-space: nowrap;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 16px;
+}
+
+.recipe-card {
+  padding: 18px;
+}
+
+.recipe-card h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.step-row {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 13px;
+}
+
+.step-row:last-child {
+  margin-bottom: 0;
+}
+
+.step-row span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #fff0f5;
+  color: #d77b91;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.step-row p {
+  margin: 2px 0 0;
+  color: #65544e;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+@media (min-width: 900px) {
+  .set-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .detail-top {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  .detail-top img {
+    height: 100%;
+    min-height: 330px;
+  }
+}
+
+.home-actions {
+  margin: 0 0 20px;
+}
+
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.primary-button {
+  width: 100%;
+  background: #d77b91;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(215, 123, 145, 0.28);
+}
+
+.secondary-button {
+  background: #ffffff;
+  color: #9b615f;
+  box-shadow: 0 8px 20px rgba(140, 92, 78, 0.12);
+}
+
+.shopping-panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.09);
+}
+
+.days-label {
+  display: grid;
+  gap: 8px;
+  color: #3b302c;
+  font-weight: 900;
+}
+
+.days-label input {
+  width: 100%;
+  border: 1px solid #f0d7d4;
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: #fffaf7;
+  color: #3b302c;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.shopping-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.shopping-set-list {
+  display: grid;
+  gap: 12px;
+}
+
+.shopping-set-card {
+  display: grid;
+  grid-template-columns: 72px 1fr 34px;
+  gap: 12px;
+  align-items: center;
+  border: none;
+  padding: 10px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.09);
+  text-align: left;
+  cursor: pointer;
+}
+
+.shopping-set-card.selected {
+  outline: 3px solid #f3b5c2;
+  background: #fff6f8;
+}
+
+.shopping-set-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.shopping-set-card p {
+  margin: 0 0 5px;
+  color: #d77b91;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.shopping-set-card h3 {
+  margin: 0;
+  color: #3b302c;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.shopping-set-card > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #fff0f5;
+  color: #d77b91;
+  font-weight: 900;
+}
+
+.selected-menu-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.selected-menu-card span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff0f5;
+  color: #b86375;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.empty-card {
+  padding: 18px;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #8d7972;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.09);
+  line-height: 1.7;
+}
+
+.ingredient-check-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f4e5df;
+}
+
+.ingredient-check-row:last-child {
+  border-bottom: none;
+}
+
+.ingredient-check-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #d77b91;
+}
+
+.ingredient-check-row span {
+  font-weight: 800;
+}
+
+.ingredient-check-row strong {
+  color: #d77b91;
+  white-space: nowrap;
+}
+
+.ingredient-category-card {
+  overflow: hidden;
+  margin-bottom: 14px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(140, 92, 78, 0.09);
+}
+
+.ingredient-category-card h3 {
+  margin: 0;
+  padding: 14px 16px;
+  background: #fff0f5;
+  color: #9b615f;
+  font-size: 15px;
+}
