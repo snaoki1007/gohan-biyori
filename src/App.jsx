@@ -41,6 +41,8 @@ const ingredientCategoryIcons = {
   その他: "🛒",
 };
 
+const getPublicPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 function App() {
   const [sets, setSets] = useState([]);
   const [setItems, setSetItems] = useState([]);
@@ -56,33 +58,33 @@ function App() {
   const [selectedSetIds, setSelectedSetIds] = useState([]);
 
   useEffect(() => {
-    Papa.parse("/data/sets.csv", {
+    Papa.parse(getPublicPath("data/sets.csv"), {
       download: true,
       header: true,
       complete: (result) => setSets(result.data.filter((row) => row.set_id)),
     });
 
-    Papa.parse("/data/set_items.csv", {
+    Papa.parse(getPublicPath("data/set_items.csv"), {
       download: true,
       header: true,
       complete: (result) =>
         setSetItems(result.data.filter((row) => row.set_id)),
     });
 
-    Papa.parse("/data/dishes.csv", {
+    Papa.parse(getPublicPath("data/dishes.csv"), {
       download: true,
       header: true,
       complete: (result) => setDishes(result.data.filter((row) => row.dish_id)),
     });
 
-    Papa.parse("/data/ingredients.csv", {
+    Papa.parse(getPublicPath("data/ingredients.csv"), {
       download: true,
       header: true,
       complete: (result) =>
         setIngredients(result.data.filter((row) => row.dish_id)),
     });
 
-    Papa.parse("/data/steps.csv", {
+    Papa.parse(getPublicPath("data/steps.csv"), {
       download: true,
       header: true,
       complete: (result) => setSteps(result.data.filter((row) => row.dish_id)),
@@ -316,7 +318,10 @@ function App() {
         </button>
 
         <section className="detail-top">
-          <img src={`/${selectedSet.image_path}`} alt={selectedSet.set_name} />
+          <img
+            src={getPublicPath(selectedSet.image_path)}
+            alt={selectedSet.set_name}
+          />
 
           <div className="detail-summary">
             <p className="label">
@@ -474,7 +479,10 @@ function App() {
                   key={set.set_id}
                   onClick={() => toggleShoppingSet(set.set_id)}
                 >
-                  <img src={`/${set.image_path}`} alt={set.set_name} />
+                  <img
+                    src={getPublicPath(set.image_path)}
+                    alt={set.set_name}
+                  />
                   <div>
                     <p>
                       {categoryIcons[setCategory] || "🍽️"} {setCategory}
@@ -583,7 +591,10 @@ function App() {
                 key={set.set_id}
                 onClick={() => openSetDetail(set)}
               >
-                <img src={`/${set.image_path}`} alt={set.set_name} />
+                <img
+                  src={getPublicPath(set.image_path)}
+                  alt={set.set_name}
+                />
 
                 <div className="set-card-body">
                   <p className="card-category">
