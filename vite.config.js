@@ -4,14 +4,19 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   base: "/gohan-biyori/",
+
   build: {
     outDir: "docs",
   },
+
   plugins: [
     react(),
+
     VitePWA({
       registerType: "autoUpdate",
+
       includeAssets: ["favicon.ico"],
+
       manifest: {
         name: "ごはん日和",
         short_name: "ごはん日和",
@@ -21,6 +26,7 @@ export default defineConfig({
         display: "standalone",
         start_url: "/gohan-biyori/",
         scope: "/gohan-biyori/",
+
         icons: [
           {
             src: "/gohan-biyori/icon-192.png",
@@ -34,8 +40,11 @@ export default defineConfig({
           },
         ],
       },
+
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,jpg,csv}"],
+
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
     }),
   ],
